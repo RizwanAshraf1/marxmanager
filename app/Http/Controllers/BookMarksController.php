@@ -30,10 +30,7 @@ class BookMarksController extends Controller
        $bookmark->description=$request->input('description');
        $bookmark->user_id=Auth()->user()->id;
        $bookmark->save();
-       return redirect('/home')->with('success',"Bookmark added");
-
-
-    }
+        }
     public function destroy($id){
         $bookmark=Bookmark::find($id);
         $bookmark->delete();
